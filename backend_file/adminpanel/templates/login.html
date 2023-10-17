@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{globs.SiteName}}</title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    </head>
+    <body>
+        {% for globs in glob %}
+            <section class="ftco-section"
+                     style="background-image: url('{{ globs.back_image.url }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            height: 100vh;
+                            position: fixed;
+                            width: 100%;">
+                <div class="container">
+                    <div class="row justify-content-center ">
+                        <div class="col-md-6 text-center ">
+                            <h2 class="heading-section"></h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            {% comment %} style="background: linear-gradient(120deg, #1e90ff, #00bfff, #87ceeb);" {% endcomment %}
+                            <div class="login-wrap py-4" style="background-color: #1e90ff;">
+                                <img src="{{ globs.logo.url }}"
+                                     alt="logo"
+                                     style="max-width: 100%;
+                                            height: auto">
+                                <h3 class="text-center my-5">
+                                    {{globs.SiteName}}
+                                </h3>
+                                <form method="POST" class="login-form">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-user"></span>
+                                        </div>
+                                        <input type="text"
+                                               class="form-control"
+                                               name="username"
+                                               id="username"
+                                               placeholder="Enter your name.."
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-lock"></span>
+                                        </div>
+                                        <input type="password"
+                                               class="form-control"
+                                               name="password"
+                                               id="password"
+                                               placeholder="Enter your password.."
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="form-control btn-primary rounded submit px-3">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+
+       
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/popper.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+ 
+    </body>
+</html>

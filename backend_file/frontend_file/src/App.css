@@ -1,0 +1,67 @@
+/* main section */
+.owl-theme .owl-stage-outer {
+  height: 100%;
+}
+.owl-theme .owl-stage-outer .owl-stage {
+  height: 100%;
+}
+.owl-theme .owl-stage-outer .owl-stage .owl-item {
+  height: 100%;
+}
+.owl-theme .owl-stage-outer .owl-stage .owl-item .item {
+  height: 100%;
+}
+.owl-theme .owl-stage-outer .owl-stage .owl-item .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clients-image {
+  height: 70px !important;
+}
+.clients-image img {
+  width: 80% !important;
+  object-fit: contain !important;
+}
+
+.custom-flex {
+  display: flex !important;
+}
+
+
+.center .slick-slide {
+  transition: transform 0.3s ease-in-out;
+}
+
+.center .slick-center {
+  position: relative;
+  transform: scale(1.4);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  overflow: clip;
+}
+
+.center .slick-slide:not(.slick-center) {
+  opacity: 0.8;
+  transform: scale(1);
+  padding: 0 3px;
+}
+
+.ReactModal__Overlay{
+  z-index: 100;
+}
+.animate::before{
+  animation: left-to-right 8s linear infinite;
+}
+@keyframes left-to-right {
+  0%{
+    left: 2%;
+  }
+  50%{
+    left: 95%;
+  }
+  100%{
+    left: 2%;
+  }
+}
